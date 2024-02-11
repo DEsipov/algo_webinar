@@ -24,12 +24,6 @@ def binary_search(lst, target):
     return -1
 
 
-def adapter(lst_str, target):
-    """Функция адаптер, входящие данные подгоняет под удобоваримый формат."""
-    result = map(int, lst_str.split())
-    return list(result), int(target)
-
-
 class BinarySearchTestCase(unittest.TestCase):
     """Класс для тестирования функции binary_search."""
 
@@ -58,17 +52,6 @@ class BinarySearchTestCase(unittest.TestCase):
         self.assertEqual(res, -1)
 
 
-class AdapterTestCase(unittest.TestCase):
-    """Тесты функции преобразования данных."""
-
-    def test_success(self):
-        input_lst, input_target = '111 1 22 2 234', '22'
-
-        lst, target = adapter(input_lst, input_target)
-
-        self.assertEqual(lst, [111, 1, 22, 2, 234], 22)
-
-
 # Триггер для запуска тестов
 TEST = True
 
@@ -78,16 +61,10 @@ if __name__ == '__main__':
         unittest.main()
     else:
         # Боевой режим
-        input_lst = input()
-        print(input_lst, type(input_lst))
+        input_lst = input().split()
         input_target = input()
-        print(input_target, type(input_target))
 
-        lst, target = adapter(input_lst, input_target)
-        print(lst, type(lst))
-        print(target, type(target))
-
-        result = binary_search(lst, target)
+        result = binary_search(input_lst, input_target)
         print(result)
 
 
