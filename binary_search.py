@@ -66,11 +66,12 @@ class AdapterTestCase(unittest.TestCase):
 
         lst, target = adapter(input_lst, input_target)
 
-        self.assertEqual(lst, [111, 1, 22, 2, 234], 22)
+        self.assertEqual(lst, [111, 1, 22, 2, 234])
+        self.assertEqual(target, 22)
 
 
 # Триггер для запуска тестов
-TEST = True
+TEST = False
 
 if __name__ == '__main__':
     if TEST:
@@ -89,5 +90,3 @@ if __name__ == '__main__':
 
         result = binary_search(lst, target)
         print(result)
-
-
