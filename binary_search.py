@@ -71,7 +71,7 @@ class AdapterTestCase(unittest.TestCase):
 
 
 # Триггер для запуска тестов
-TEST = False
+TEST = True
 
 if __name__ == '__main__':
     if TEST:
