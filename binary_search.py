@@ -71,7 +71,7 @@ class AdapterTestCase(unittest.TestCase):
 
 
 # Триггер для запуска тестов
-TEST = True
+TEST = False
 
 if __name__ == '__main__':
     if TEST:
@@ -80,13 +80,8 @@ if __name__ == '__main__':
     else:
         # Боевой режим
         input_lst = input()
-        print(input_lst, type(input_lst))
         input_target = input()
-        print(input_target, type(input_target))
 
         lst, target = adapter(input_lst, input_target)
-        print(lst, type(lst))
-        print(target, type(target))
 
         result = binary_search(lst, target)
-        print(result)
